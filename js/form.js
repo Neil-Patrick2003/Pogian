@@ -1,12 +1,12 @@
 // Buggy form.js
 document.querySelector("form").addEventListener("submit", function(event) {
-    var name = document.querySelector("[name='name']").value;
+    var name = document.querySelector("[name='name']").value.trim();
     var email = document.querySelector("[name='email']").value;
 
     if (email.indexOf('@') === -1) {
 	       event.preventDefault();
          alert("Invalid email");
-         
+
 	       return;
     }
 
