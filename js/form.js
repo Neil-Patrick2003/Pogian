@@ -1,22 +1,24 @@
 // Buggy form.js
-document.querySelector("form").addEventListener("submit", function(event) {
-    var name = document.querySelector("[name='name']").value.trim();
-    var email = document.querySelector("[name='email']").value;
 
-    if (email.indexOf('@') === -1) {
-	       event.preventDefault();
-         alert("Invalid email");
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault();
 
-	       return;
-    }
+        var name = document.querySelector("[name='name']").value.trim();
+        var email = document.querySelector("[name='email']").value.trim();
 
-    if (name.length() < 1) {
-	       event.preventDefault();
-         alert("Please input a name");
-	       return;
-    }
+        if (name === "") {
+            alert("Name is required");
+            return;
+        }
 
-    alert("Form submitted!");
+        if (email.indexOf('@') === -1) {
+            alert("Invalid email");
+            return;
+        }
+
+        alert("Form submitted!");
+    });
 });
 
 var submitButton = document.querySelector("button");
@@ -25,7 +27,6 @@ submitButton.addEventListener("click", function() {
     if (name === "") {
   	       event.preventDefault();
            alert("Name is required");
-
   	       return;
       }
 });
