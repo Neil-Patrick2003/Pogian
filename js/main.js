@@ -6,5 +6,5 @@ document.getElementById("menuBtn").addEventListener("click", toggleMenu);
 // toggleMenu is not defined
 
 function toggleMenu(){
-  alert('toggle');
+  alert('Toggle Menu!');
 }
