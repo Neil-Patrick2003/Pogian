@@ -10,6 +10,12 @@ document.querySelector("form").addEventListener("submit", function(event) {
 	       return;
     }
 
+    if (name.length() < 1) {
+	       event.preventDefault();
+         alert("Please input a name");
+	       return;
+    }
+
     alert("Form submitted!");
 });
 
